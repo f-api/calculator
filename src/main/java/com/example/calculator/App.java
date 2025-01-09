@@ -24,28 +24,25 @@ public class App {
             System.out.print("사칙연산 기호를 입력하세요 (+, -, *, /): ");
             char operator = sc.next().charAt(0);
 
-            int result;
             switch (operator) {
                 case '+':
-                    result = firstNumber + secondNumber;
+                    System.out.println("결과: " + (firstNumber + secondNumber));
                     break;
                 case '-':
-                    result = firstNumber - secondNumber;
+                    System.out.println("결과: " + (firstNumber - secondNumber));
                     break;
                 case '*':
-                    result = firstNumber * secondNumber;
+                    System.out.println("결과: " + firstNumber * secondNumber);
                     break;
                 case '/':
                     if (secondNumber == 0) {
                         throw new IllegalArgumentException("나눗셈 연산에서 분모(두 번째 정수)가 0일 수 없습니다.");
                     }
-                    result = firstNumber / secondNumber;
+                    System.out.println("결과: " + (double) firstNumber / secondNumber);
                     break;
                 default:
                     throw new IllegalArgumentException("사칙연산 기호는 +, -, *, / 중 하나여야 합니다.");
             }
-
-            System.out.println("결과: " + result);
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String answer = sc.next();
